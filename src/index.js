@@ -12,6 +12,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { addPost } from './actions/index';
 
+// import './styles/App.scss';
 const rootReducer = combineReducers({ postReducer });
 
 const store = createStore(rootReducer);
@@ -34,7 +35,7 @@ class App extends React.Component {
     return (
       <div>
         <MainMenu />
-        {this.state.foo}
+        <div>{this.state.foo}</div>
         {this.props.children}
         <input type="text" ref="text" />
         <button onClick={this.handleClick}>ADD</button>
@@ -50,6 +51,7 @@ App.contextTypes = {
 App.propTypes = {
   children: React.PropTypes.object
 };
+
 
 const renderAll = () => {
   ReactDOM.render(

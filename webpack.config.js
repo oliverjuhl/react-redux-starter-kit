@@ -24,11 +24,11 @@ module.exports = {
     }],
     loaders: [{
       test: /\.js$/,
-      loaders: ['react-hot', 'babel'],
+      loaders: ['react-hot', 'babel?presets[]=stage-0,presets[]=react,presets[]=es2015'],
       include: path.join(__dirname, 'src')
     }, {
       test: /\.scss$/,
-      loaders: ['style?sourceMap', 'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]', 'sass?sourceMap']
+      loaders: ['style', 'css', 'sass']
     }]
   }
 };

@@ -2,6 +2,7 @@
   "extends": "airbnb",
   "rules": {
     "comma-dangle": 0,
-    "new-cap": [2, { "capIsNewExceptions": ["List", "Map"] }]
-  }
+    "new-cap": [2, { "capIsNewExceptions": ["List", "Map", "CSSModules"] }]
+  },
+  "parser": "babel-eslint"
 }
