@@ -1,9 +1,10 @@
 import React from 'react';
 import PostLink from '../PostLink';
+import { style } from './Posts.scss';
 
 const Posts = (props) => (
   <div>
-    <PostLink nr="1" />
+    <PostLink class={className} nr="1" />
     <PostLink nr="2" />
     <PostLink nr="3" />
     <div><br /><br />
