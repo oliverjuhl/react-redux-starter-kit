@@ -1,68 +1,35 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 import { Router, Route, browserHistory } from 'react-router';
-import MainMenu from './components/MainMenu';
 import NoMatch from './components/NoMatch';
-import Post from './components/Post';
 import About from './components/About';
-import Posts from './components/Posts';
-import { combineReducers } from 'redux-immutable';
+import App from './components/App';
+import Post from './containers/Post';
+import Posts from './containers/Posts';
+import Home from './containers/Home';
 import postReducer from './reducers/posts';
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
-import { addPost } from './actions/index';
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 
-// import './styles/App.scss';
-const rootReducer = combineReducers({ postReducer });
+import './styles/main.scss';
+
+const rootReducer = combineReducers({ postReducer, routing: routerReducer });
 
 const store = createStore(rootReducer);
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-
-    this.state = {
-      foo: 'bar'
-    };
-  }
-
-  handleClick() {
-    store.dispatch(addPost('eee'));
-  }
-
-  render() {
-    return (
-      <div>
-        <MainMenu />
-        <div>{this.state.foo}</div>
-        {this.props.children}
-        <input type="text" ref="text" />
-        <button onClick={this.handleClick}>ADD</button>
-      </div>
-    );
-  }
-}
-
-App.contextTypes = {
-  store: React.PropTypes.object
-};
-
-App.propTypes = {
-  children: React.PropTypes.object
-};
-
+const history = syncHistoryWithStore(browserHistory, store);
 
 const renderAll = () => {
   ReactDOM.render(
     (
       <Provider store={store}>
-        <Router history={browserHistory}>
+        <Router history={history}>
           <Route path="/" component={App}>
             <Route path="about" component={About} />
-            <Route path="posts" component={Posts}>
-              <Route path="/post/:nr" component={Post} />
-            </Route>
+            <Route path="posts" component={Posts} />
+            <Route path="home" component={Home} />
+            <Route path="/post/:nr" component={Post} />
             <Route path="*" component={NoMatch} />
           </Route>
         </Router>
@@ -73,3 +40,4 @@ const renderAll = () => {
 
 store.subscribe(renderAll);
 renderAll();
+

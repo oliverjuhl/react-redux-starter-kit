@@ -1,19 +1,14 @@
 import { handleActions } from 'redux-actions';
 import { Post } from '../constants/actionTypes';
-import Immutable from 'immutable';
 
-// const uuid = require('node-uuid');
-
-const initialState = Immutable.Map();
+const initialState = [];
 
 export function addPost(state, action) {
-  // console.log('addpost');
-  return state.set(state.size, action.payload);
+  return state.concat(action.payload);
 }
 
 export function removePost(state, action) {
-  // console.log('removepost');
-  return state.filter((post) => post.get(post.uuid) !== action.uuid);
+  return state.slice(state.indexOf(action.id), 1);
 }
 
 const postReducer = handleActions({

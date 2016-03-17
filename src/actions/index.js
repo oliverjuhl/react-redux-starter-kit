@@ -7,9 +7,9 @@ export function addPost(payload) {
   };
 }
 
-export function remove(uuid) {
+export function remove(id) {
   return {
     type: Post.rm,
-    uuid
+    id
   };
 }
