@@ -16,7 +16,9 @@ import './styles/main.scss';
 
 const rootReducer = combineReducers({ postReducer, routing: routerReducer });
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer,
+  window.devToolsExtension ? window.devToolsExtension() : undefined
+);
 
 const history = syncHistoryWithStore(browserHistory, store);
 
