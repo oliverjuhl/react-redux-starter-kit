@@ -22,6 +22,12 @@ const store = createStore(rootReducer,
 
 const history = syncHistoryWithStore(browserHistory, store);
 
+const container = document.getElementById('root');
+
+export function __unload() {
+  ReactDOM.unmountComponentAtNode(container);
+}
+
 const renderAll = () => {
   ReactDOM.render(
     (
@@ -36,7 +42,7 @@ const renderAll = () => {
           </Route>
         </Router>
       </Provider>
-    ), document.getElementById('root')
+    ), container
   );
 };
 

@@ -6,10 +6,6 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-
-    this.state = {
-      foo: 'bar'
-    };
   }
 
   handleClick(e) {
@@ -25,7 +21,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="content">
         ADD POST <br />
         <input type="text" ref="newPost" />
         <button onClick={this.handleClick}>ADD</button>

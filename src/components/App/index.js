@@ -4,7 +4,9 @@ import MainMenu from '../MainMenu';
 const App = (props) => (
   <div>
     <MainMenu />
-    {props.children}
+    <div className="bp-navigation-main">
+      {props.children}
+    </div>
   </div>
 );
 

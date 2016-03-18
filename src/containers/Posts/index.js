@@ -13,7 +13,7 @@ class Posts extends React.Component {
     const { store } = this.context;
     const state = store.getState();
     return (
-      <div>
+      <div className="content">
         { this.state.post }
         { state.postReducer.map(
           (post, index) => (<PostLink key={index} nr={index} text={post} />)

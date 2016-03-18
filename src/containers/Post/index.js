@@ -12,7 +12,7 @@ class Post extends React.Component {
     const { store } = this.context;
     const state = store.getState();
     return (
-      <div>
+      <div className="content">
         <span>POST SUPER NR {this.state.id}</span>
         <br />
         {state.postReducer[this.state.id]}
