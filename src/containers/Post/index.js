@@ -12,10 +12,12 @@ class Post extends React.Component {
     const { store } = this.context;
     const state = store.getState();
     return (
-      <div className="content">
-        <span>POST SUPER NR {this.state.id}</span>
+      <div className="content post">
+        <div className="post-number">post no. {this.state.id}</div>
         <br />
-        {state.postReducer[this.state.id]}
+        <div className="post-text">
+          {state.postReducer[this.state.id]}
+        </div>
         <input type="text" ref="post" style={{ display: 'none' }} />
       </div>
     );

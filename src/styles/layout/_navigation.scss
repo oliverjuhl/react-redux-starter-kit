@@ -36,7 +36,8 @@ body {
 
 .bp-navigation-main {
   background-color: whitesmoke;
-  @include size(600px, 800px);
+  @include size(600px, 100%);
+  min-height: 800px;
   .content {
     padding-top: 60px;
   }

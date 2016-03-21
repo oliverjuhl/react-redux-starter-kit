@@ -14,10 +14,12 @@ class Posts extends React.Component {
     const state = store.getState();
     return (
       <div className="content">
-        { this.state.post }
-        { state.postReducer.map(
-          (post, index) => (<PostLink key={index} nr={index} text={post} />)
-        ) }
+        <div className="posts-list">
+          { this.state.post }
+          { state.postReducer.map(
+            (post, index) => (<PostLink key={index} nr={index} text={post} />)
+          ) }
+        </div>
         <div><br /><br />
           {this.props.children}
         </div>

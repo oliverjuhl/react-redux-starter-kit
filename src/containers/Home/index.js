@@ -21,10 +21,10 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className="content">
-        ADD POST <br />
-        <input type="text" ref="newPost" />
-        <button onClick={this.handleClick}>ADD</button>
+      <div className="content home-form">
+        <div className="home-form-title">add post</div>
+        <textarea className="home-form-input" rows="3" type="text" ref="newPost" placeholder="Your post"></textarea>
+        <button className="home-form-button" onClick={this.handleClick}>add</button>
       </div>
     );
   }
