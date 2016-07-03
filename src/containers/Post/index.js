@@ -8,6 +8,21 @@ class Post extends React.Component {
     };
   }
 
+  componentDidMount() {
+    const { store } = this.context;
+    this.unsubscribe = store.subscribe(() =>
+      this.forceUpdate()
+    );
+  }
+
+  componentWillReceiveProps(props) {
+    this.state.id = props.params.nr;
+  }
+
+  componentWillUnmount() {
+    this.unsubscribe();
+  }
+
   render() {
     const { store } = this.context;
     const state = store.getState();

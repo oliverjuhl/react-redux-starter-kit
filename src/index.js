@@ -45,16 +45,11 @@ const routes = {
   ]
 };
 
-const renderAll = () => {
-  ReactDOM.render(
-    (
-      <Provider store={store}>
-        <Router history={history} routes={routes} />
-      </Provider>
-    ), container
-  );
-};
 
-store.subscribe(renderAll);
-renderAll();
-
+ReactDOM.render(
+  (
+    <Provider store={store}>
+      <Router history={history} routes={routes} />
+    </Provider>
+  ), container
+);
