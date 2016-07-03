@@ -19,6 +19,7 @@ class Home extends React.Component {
     store.dispatch(addPost(newPost));
   }
 
+  /*eslint-disable */
   render() {
     return (
       <div className="content home-form">
@@ -28,6 +29,7 @@ class Home extends React.Component {
       </div>
     );
   }
+  /*eslint-disable */
 }
 
 Home.contextTypes = {

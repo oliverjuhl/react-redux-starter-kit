@@ -29,18 +29,20 @@ export function __unload() {
 }
 
 const routes = {
-    path: '/',
-    component: App,
-    childRoutes: [
-        { path: '/about', component: About },
-        {
-            path: '/posts',
-            component: Posts,
-            childRoutes: [ { path: '/post/:nr', component: Post } ]
-        },
-        { path: '/home', component: Home },
-        { path: '*', component: NoMatch}
-    ]
+  path: '/',
+  component: App,
+  childRoutes: [
+    { path: '/about', component: About },
+    {
+      path: '/posts',
+      component: Posts,
+      childRoutes: [
+       { path: '/post/:nr', component: Post }
+      ]
+    },
+    { path: '/home', component: Home },
+    { path: '*', component: NoMatch }
+  ]
 };
 
 const renderAll = () => {
