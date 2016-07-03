@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, browserHistory } from 'react-router';
 import NoMatch from './components/NoMatch';
 import About from './components/About';
 import App from './components/App';
@@ -28,19 +28,26 @@ export function __unload() {
   ReactDOM.unmountComponentAtNode(container);
 }
 
+const routes = {
+    path: '/',
+    component: App,
+    childRoutes: [
+        { path: '/about', component: About },
+        {
+            path: '/posts',
+            component: Posts,
+            childRoutes: [ { path: '/post/:nr', component: Post } ]
+        },
+        { path: '/home', component: Home },
+        { path: '*', component: NoMatch}
+    ]
+};
+
 const renderAll = () => {
   ReactDOM.render(
     (
       <Provider store={store}>
-        <Router history={history}>
-          <Route path="/" component={App}>
-            <Route path="about" component={About} />
-            <Route path="posts" component={Posts} />
-            <Route path="home" component={Home} />
-            <Route path="/post/:nr" component={Post} />
-            <Route path="*" component={NoMatch} />
-          </Route>
-        </Router>
+        <Router history={history} routes={routes} />
       </Provider>
     ), container
   );
