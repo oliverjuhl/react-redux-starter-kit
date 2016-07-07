@@ -1,13 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { addPost } from '../../actions/index';
 
 class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
-
   componentDidMount() {
     const { store } = this.context;
     this.unsubscribe = store.subscribe(() =>
@@ -19,24 +13,20 @@ class Home extends React.Component {
     this.unsubscribe();
   }
 
-  handleClick(e) {
-    e.preventDefault();
-    const { store } = this.context;
-    const newPost = ReactDOM.findDOMNode(this.refs.newPost).value.trim();
-    if (!newPost) {
-      return;
-    }
-    ReactDOM.findDOMNode(this.refs.newPost).value = '';
-    store.dispatch(addPost(newPost));
-  }
-
   /*eslint-disable */
   render() {
+    const { store } = this.context;
     return (
       <div className="content home-form">
         <div className="home-form-title">add post</div>
-        <textarea className="home-form-input" rows="3" type="text" ref="newPost" placeholder="Your post"></textarea>
-        <button className="home-form-button" onClick={this.handleClick}>add</button>
+        <textarea className="home-form-input" rows="3" type="text" ref={ node => {this.input = node}} placeholder="Your post"></textarea>
+        <button className="home-form-button" onClick={() => {
+          if(!this.input.value) {
+            return;
+          }
+          store.dispatch(addPost(this.input.value));
+          this.input.value = '';
+        }}>add</button>
       </div>
     );
   }

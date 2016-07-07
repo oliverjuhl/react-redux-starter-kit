@@ -4,11 +4,14 @@ import { Post } from '../constants/actionTypes';
 const initialState = [];
 
 export function addPost(state, action) {
-  return state.concat(action.payload);
+  return [...state, action.payload];
 }
 
 export function removePost(state, action) {
-  return state.slice(state.indexOf(action.id), 1);
+  return [
+    ...state.slice(0, action.id),
+    ...state.slice(action.id + 1)
+  ];
 }
 
 const postReducer = handleActions({
