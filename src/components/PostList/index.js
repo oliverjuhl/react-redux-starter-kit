@@ -1,10 +1,10 @@
 import React from 'react';
 import PostLink from '../PostLink';
 
-const PostList = ({ postReducer, children }) => (
+const PostList = ({ posts, children }) => (
   <div className="content">
     <div className="posts-list">
-      { postReducer.map(
+      { posts.map(
         (post, index) => (<PostLink key={index} nr={index} text={post} />)
       ) }
     </div>
@@ -16,7 +16,7 @@ const PostList = ({ postReducer, children }) => (
 );
 
 PostList.propTypes = {
-  postReducer: React.PropTypes.array,
+  posts: React.PropTypes.array,
   children: React.PropTypes.object
 };
 

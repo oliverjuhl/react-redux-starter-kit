@@ -1,51 +1,28 @@
 import React from 'react';
+import PostView from '../../components/PostView';
+import { connect } from 'react-redux';
 
-class Post extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      id: props.params.nr
-    };
-  }
+/*eslint-disable */
+const mapStateToProps = (state, ownProps) => {
+  return {
+    posts: state.postReducer,
+    id: parseInt(ownProps.params.nr)
+  };
+};
 
-  componentDidMount() {
-    const { store } = this.context;
-    this.unsubscribe = store.subscribe(() =>
-      this.forceUpdate()
-    );
-  }
+const mapDispatchToProps = () => {
+  return {};
+};
+/*eslint-disable */
 
-  componentWillReceiveProps(props) {
-    this.state.id = props.params.nr;
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe();
-  }
-
-  render() {
-    const { store } = this.context;
-    const state = store.getState();
-    return (
-      <div className="content post">
-        <div className="post-number">post no. {this.state.id}</div>
-        <br />
-        <div className="post-text">
-          {state.postReducer[this.state.id]}
-        </div>
-        <input type="text" ref="post" style={{ display: 'none' }} />
-      </div>
-    );
-  }
-}
+const Post = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(PostView);
 
 Post.propTypes = {
   params: React.PropTypes.object,
   'params.id': React.PropTypes.number
-};
-
-Post.contextTypes = {
-  store: React.PropTypes.object
 };
 
 export default Post;

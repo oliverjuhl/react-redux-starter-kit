@@ -3,13 +3,12 @@ import PostList from '../../components/PostList';
 import { connect } from 'react-redux';
 
 /*eslint-disable */
-const mapStateToProps = (state, props) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    postReducer: state.postReducer,
-    children: props.children
+    posts: state.postReducer,
+    children: ownProps.children
   };
 };
-
 
 const mapDispatchToProps = () => {
   return {};
