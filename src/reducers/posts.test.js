@@ -2,8 +2,6 @@ import { addPost, removePost } from './posts';
 
 import { expect } from 'chai';
 
-console.log(expect);
-
 describe('Post reducer', function() {
   describe('#addPost()', function() {
     it('should return new state with concated value', function() {
