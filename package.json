@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test-utils/test-helper.js ./src/**/*.test.js",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "nightwatch": "nightwatch -e chrome"
   },
   "repository": {
     "type": "git",
@@ -50,6 +51,9 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "selenium-server-standalone-jar": "^2.53.0",
+    "phantomjs": "^1.9.18",
+    "nightwatch": "^0.8.8",
     "classnames": "^2.2.3",
     "draft-js": "^0.2.2",
     "estraverse-fb": "^1.3.1",
