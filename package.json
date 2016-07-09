@@ -7,7 +7,7 @@
     "start": "node server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test-utils/test-helper.js ./src/**/*.test.js",
     "test:watch": "npm run test -- --watch",
-    "nightwatch": "nightwatch -e chrome"
+    "nightwatch": "npm run start & nightwatch -e chrome"
   },
   "repository": {
     "type": "git",
