@@ -2,14 +2,12 @@ import React from 'react';
 import PostView from '../../components/PostView';
 import { connect } from 'react-redux';
 
-const emptyObject = {};
-
 const mapStateToProps = (state, ownProps) => ({
   posts: state.postReducer,
   id: parseInt(ownProps.params.nr, 10)
 });
 
-const mapDispatchToProps = () => emptyObject;
+const mapDispatchToProps = () => ({});
 
 const Post = connect(
   mapStateToProps,

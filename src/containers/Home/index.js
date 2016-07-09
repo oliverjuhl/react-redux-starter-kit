@@ -2,9 +2,7 @@ import { addPost } from '../../actions/index';
 import HomeView from '../../components/HomeView';
 import { connect } from 'react-redux';
 
-const emptyObject = {};
-
-const mapStateToProps = () => emptyObject;
+const mapStateToProps = () => ({});
 
 const mapDispatchToProps = (dispatch) => ({
   handleClick: (newPost) => {
