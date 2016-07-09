@@ -1,8 +1,10 @@
 {
+  "plugins": ["react"],
   "extends": "airbnb",
   "rules": {
     "comma-dangle": 0,
-    "new-cap": [2, { "capIsNewExceptions": ["List", "Map", "CSSModules"] }]
+    "new-cap": [2, { "capIsNewExceptions": ["List", "Map", "CSSModules"] }],
+    "react/jsx-closing-bracket-location": [2, "after-props"]
   },
   "parser": "babel-eslint"
 }
