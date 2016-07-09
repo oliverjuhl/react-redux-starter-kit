@@ -18,7 +18,7 @@ const HomeView = ({ handleClick }) => {
         }
         handleClick(input.value);
         input.value = '';
-      }}>add\
+      }}>add
     </button>
   </div>);
 };

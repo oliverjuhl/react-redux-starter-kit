@@ -11,7 +11,6 @@ const PostList = ({ posts, children }) => (
     <div><br /><br />
       {children}
     </div>
-    <input type="text" style={{ display: 'none' }} />
   </div>
 );
 
