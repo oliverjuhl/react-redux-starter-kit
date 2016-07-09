@@ -2,18 +2,14 @@ import React from 'react';
 import PostList from '../../components/PostList';
 import { connect } from 'react-redux';
 
-/*eslint-disable */
-const mapStateToProps = (state, ownProps) => {
-  return {
-    posts: state.postReducer,
-    children: ownProps.children
-  };
-};
+const emptyObject = {};
 
-const mapDispatchToProps = () => {
-  return {};
-};
-/*eslint-disable */
+const mapStateToProps = (state, ownProps) => ({
+  posts: state.postReducer,
+  children: ownProps.children
+});
+
+const mapDispatchToProps = () => emptyObject;
 
 const Posts = connect(
   mapStateToProps,

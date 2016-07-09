@@ -2,19 +2,15 @@ import { addPost } from '../../actions/index';
 import HomeView from '../../components/HomeView';
 import { connect } from 'react-redux';
 
-/*eslint-disable */
-const mapStateToProps = (state) => {
-  return {};
-};
+const emptyObject = {};
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    handleClick: (newPost) => {
-      dispatch(addPost(newPost));
-    }
-  };
-};
-/*eslint-disable */
+const mapStateToProps = () => emptyObject;
+
+const mapDispatchToProps = (dispatch) => ({
+  handleClick: (newPost) => {
+    dispatch(addPost(newPost));
+  }
+});
 
 const Home = connect(
   mapStateToProps,
