@@ -1,3 +1,5 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d275c621eb014202bd6bdca26281bd94)](https://www.codacy.com/app/tomasz-szymanek/react-redux-starter-kit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tomasz-szymanek/react-redux-starter-kit&amp;utm_campaign=Badge_Grade)
+
 ### lightweight react-redux starter kit
 Yet Another JavaScript Boilerplate using react, redux, mocha, eslint and scsslint
 
