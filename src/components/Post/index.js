@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PostView = ({ posts, id }) => (
+const Post = ({ posts, id }) => (
   <div className="content post">
     <div className="post-number">post no. {id}</div>
     <br />
@@ -11,9 +11,9 @@ const PostView = ({ posts, id }) => (
   </div>
 );
 
-PostView.propTypes = {
+Post.propTypes = {
   posts: React.PropTypes.array,
   id: React.PropTypes.number,
 };
 
-export default PostView;
+export default Post;

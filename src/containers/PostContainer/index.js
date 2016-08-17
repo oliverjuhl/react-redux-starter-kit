@@ -1,5 +1,5 @@
 import React from 'react';
-import PostView from '../../components/PostView';
+import Post from '../../components/Post';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -9,14 +9,14 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = () => ({});
 
-const Post = connect(
+const PostContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(PostView);
+)(Post);
 
-Post.propTypes = {
+PostContainer.propTypes = {
   params: React.PropTypes.object,
   'params.id': React.PropTypes.number,
 };
 
-export default Post;
+export default PostContainer;

@@ -1,5 +1,5 @@
 import { addPost } from '../../actions/index';
-import HomeView from '../../components/HomeView';
+import Home from '../../components/Home';
 import { connect } from 'react-redux';
 
 const mapStateToProps = () => ({});
@@ -10,9 +10,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-const Home = connect(
+const HomeContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(HomeView);
+)(Home);
 
-export default Home;
+export default HomeContainer;

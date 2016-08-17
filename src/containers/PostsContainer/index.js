@@ -9,13 +9,13 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = () => ({});
 
-const Posts = connect(
+const PostsContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(PostList);
 
-Posts.propTypes = {
+PostsContainer.propTypes = {
   children: React.PropTypes.object,
 };
 
-export default Posts;
+export default PostsContainer;

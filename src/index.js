@@ -4,9 +4,9 @@ import { Router, browserHistory } from 'react-router';
 import NoMatch from './components/NoMatch';
 import About from './components/About';
 import App from './components/App';
-import Post from './containers/Post';
-import Posts from './containers/Posts';
-import Home from './containers/Home';
+import PostContainer from './containers/PostContainer';
+import PostsContainer from './containers/PostsContainer';
+import HomeContainer from './containers/HomeContainer';
 import postReducer from './reducers/posts';
 import thunk from 'redux-thunk';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
@@ -39,12 +39,12 @@ const routes = {
     { path: '/about', component: About },
     {
       path: '/posts',
-      component: Posts,
+      component: PostsContainer,
       childRoutes: [
-       { path: '/post/:nr', component: Post },
+       { path: '/post/:nr', component: PostContainer },
       ],
     },
-    { path: '/home', component: Home },
+    { path: '/home', component: HomeContainer },
     { path: '*', component: NoMatch },
   ],
 };

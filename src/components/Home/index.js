@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HomeView = ({ handleClick }) => {
+const Home = ({ handleClick }) => {
   let input = '';
   return (
   <div className="content home-form">
@@ -23,8 +23,8 @@ const HomeView = ({ handleClick }) => {
   </div>);
 };
 
-HomeView.propTypes = {
+Home.propTypes = {
   handleClick: React.PropTypes.func,
 };
 
-export default HomeView;
+export default Home;
