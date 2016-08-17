@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state, ownProps) => ({
   posts: state.postReducer,
-  id: parseInt(ownProps.params.nr, 10)
+  id: parseInt(ownProps.params.nr, 10),
 });
 
 const mapDispatchToProps = () => ({});
@@ -16,7 +16,7 @@ const Post = connect(
 
 Post.propTypes = {
   params: React.PropTypes.object,
-  'params.id': React.PropTypes.number
+  'params.id': React.PropTypes.number,
 };
 
 export default Post;

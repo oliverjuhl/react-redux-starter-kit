@@ -16,7 +16,7 @@ const PostList = ({ posts, children }) => (
 
 PostList.propTypes = {
   posts: React.PropTypes.array,
-  children: React.PropTypes.object
+  children: React.PropTypes.object,
 };
 
 export default PostList;

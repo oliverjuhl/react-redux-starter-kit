@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state, ownProps) => ({
   posts: state.postReducer,
-  children: ownProps.children
+  children: ownProps.children,
 });
 
 const mapDispatchToProps = () => ({});
@@ -15,7 +15,7 @@ const Posts = connect(
 )(PostList);
 
 Posts.propTypes = {
-  children: React.PropTypes.object
+  children: React.PropTypes.object,
 };
 
 export default Posts;

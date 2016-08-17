@@ -24,7 +24,7 @@ const HomeView = ({ handleClick }) => {
 };
 
 HomeView.propTypes = {
-  handleClick: React.PropTypes.func
+  handleClick: React.PropTypes.func,
 };
 
 export default HomeView;

@@ -8,7 +8,8 @@ import Post from './containers/Post';
 import Posts from './containers/Posts';
 import Home from './containers/Home';
 import postReducer from './reducers/posts';
-import { createStore, combineReducers } from 'redux';
+import thunk from 'redux-thunk';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 
@@ -17,7 +18,10 @@ import './styles/main.scss';
 const rootReducer = combineReducers({ postReducer, routing: routerReducer });
 
 const store = createStore(rootReducer,
-  window.devToolsExtension ? window.devToolsExtension() : undefined
+  compose(
+    applyMiddleware(thunk),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
+  )
 );
 
 const history = syncHistoryWithStore(browserHistory, store);
@@ -37,12 +41,12 @@ const routes = {
       path: '/posts',
       component: Posts,
       childRoutes: [
-       { path: '/post/:nr', component: Post }
-      ]
+       { path: '/post/:nr', component: Post },
+      ],
     },
     { path: '/home', component: Home },
-    { path: '*', component: NoMatch }
-  ]
+    { path: '*', component: NoMatch },
+  ],
 };
 
 

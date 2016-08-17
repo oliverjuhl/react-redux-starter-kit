@@ -7,7 +7,7 @@ const mapStateToProps = () => ({});
 const mapDispatchToProps = (dispatch) => ({
   handleClick: (newPost) => {
     dispatch(addPost(newPost));
-  }
+  },
 });
 
 const Home = connect(

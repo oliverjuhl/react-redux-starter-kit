@@ -11,7 +11,7 @@ const App = (props) => (
 );
 
 App.propTypes = {
-  children: React.PropTypes.object
+  children: React.PropTypes.object,
 };
 
 export default App;

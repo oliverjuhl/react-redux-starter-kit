@@ -13,7 +13,7 @@ const PostView = ({ posts, id }) => (
 
 PostView.propTypes = {
   posts: React.PropTypes.array,
-  id: React.PropTypes.number
+  id: React.PropTypes.number,
 };
 
 export default PostView;

@@ -9,7 +9,7 @@ const PostLink = (props) => (
 );
 
 PostLink.propTypes = {
-  nr: React.PropTypes.number
+  nr: React.PropTypes.number,
 };
 
 export default PostLink;
