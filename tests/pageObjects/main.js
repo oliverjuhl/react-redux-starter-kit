@@ -4,6 +4,6 @@ module.exports = {
   },
 
   elements: {
-    menu: 'div[class="bp-navigation-bar"]'
-  }
+    menu: 'div[class="bp-navigation-bar"]',
+  },
 };

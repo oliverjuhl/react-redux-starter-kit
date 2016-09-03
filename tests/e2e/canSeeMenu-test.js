@@ -6,5 +6,5 @@ module.exports = {
     main.expect.element('@menu').to.be.visible;
 
     browser.end();
-  }
+  },
 };

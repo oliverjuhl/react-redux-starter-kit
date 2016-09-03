@@ -6,12 +6,12 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
-    './src/index'
+    './src/index',
   ],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: '/static/',
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
@@ -20,15 +20,15 @@ module.exports = {
     preLoaders: [{
       test: /\.js$/,
       loader: 'eslint-loader',
-      exclude: /node_modules/
+      exclude: /node_modules/,
     }],
     loaders: [{
       test: /\.js$/,
       loaders: ['react-hot', 'babel?presets[]=stage-0,presets[]=react,presets[]=es2015'],
-      include: path.join(__dirname, 'src')
+      include: path.join(__dirname, 'src'),
     }, {
       test: /\.scss$/,
-      loaders: ['style', 'css', 'sass']
+      loaders: ['style', 'css', 'sass'],
     }]
-  }
+  },
 };
